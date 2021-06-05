@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>فروشگاه اینترنتی دیجی کالا</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <link href="css/flipTimer.css" rel="stylesheet">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/jquery.flipTimer.js"></script>
+
+
+</head>
+<body style="margin: 0; background-color: #cccccc;">
+<style>
+
+    /*OVERALL=============================================*/
+    @font-face {
+        font-family: 'Yekan';
+        src: url(Fonts/Yekan.ttf) format('truetype'),
+        url(Fonts/Yekan.eot?#iefix) format('embedded-opentype');
+    }
+
+    span, p, div {
+        text-align: right;
+        direction: rtl;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .yekan {
+        font-family: Yekan;
+    }
+
+    .fontsm {
+        font-size: 11.3pt;
+    }
+
+    .fontmd {
+        font-size: 12.3pt;
+    }
+
+    .fontl {
+        font-size: 13.3pt;
+    }
+
+    #header_right {
+        width: 720px;
+        height: 100px;
+        float: right;
+    }
+
+    /*HEADER CSS DESIGN======================================*/
+    #header_right_top .lock_icon {
+        width: 20px;
+        height: 20px;
+        background: url(Icon/smart-key.png);
+        display: block;
+        float: right;
+        margin-right: 2px;
+    }
+
+    #header_right_top .user_icon {
+        width: 20px;
+        height: 20px;
+        background: url(Icon/man.png);
+        display: block;
+        float: right;
+        margin-right: 2px;
+    }
+
+    #basket_top_right {
+        width: 54px;
+        height: 100%;
+        background: #64c564 url(Icon/buy.png) no-repeat;
+        background-position: center;
+        float: right;
+
+    }
+
+    #basket_top_left {
+        width: 120px;
+        height: 100%;
+        background: #5d9c40;
+        float: right;
+        padding: 0 8px;
+        line-height: 2;
+
+    }
+
+    #basket_top_left .basket_num {
+        width: 25px;
+        height: 25px;
+        background: #e6eff2;
+        color: white;
+        text-align: center;
+        display: inline-block;
+        margin-top: 7px;
+        line-height: 25px;
+        border-radius: 100%;
+        margin-right: 5px;
+    }
+
+    #search_top {
+        width: 480px;
+        height: 40px;
+        float: right;
+        margin-right: 20px;
+        position: relative;
+    }
+
+    #search_top .search_input {
+        width: 354px;
+        height: 33px;
+        margin-top: 3px;
+        border: 1px solid #eee;
+        padding-right: 10px;
+        color: #91999c;
+    }
+
+    #search_top span {
+        width: 42px;
+        height: 35px;
+        display: block;
+        position: absolute;
+        background: url(Icon/search.png) #b6c0c49c no-repeat center;
+        top: 4px;
+        left: 114px;
+    }
+
+    /*NAV CSS DESIGN==================================================*/
+    #nav {
+        width: 100%;
+        height: 40px;
+        background: #f7f8fa;
+        box-shadow: 1px 3px 4px #ccc;
+        border-top: 1px solid #aaaaaa26;
+    }
+
+    .submenu3_hide {
+        width: 1200px;
+        height: 300px;
+        border-top: 2px solid #cccccc;
+        position: absolute;
+        right: 0;
+        background: white;
+    }
+
+    ul {
+        margin: 0;
+        padding-right: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    #menu_top > ul {
+        position: relative;
+
+    }
+
+    #menu_top > ul > li {
+        float: right;
+        height: 40px;
+        margin-left: 16px;
+        padding-right: 5px;
+    }
+
+    #menu_top > ul > li > a {
+        padding: 0 38px;
+        display: block;
+        line-height: 35px;
+        padding-right: 10px;
+    }
+
+    #menu_top > ul > li > ul > li > a {
+        padding: 0 10px;
+        display: block;
+    }
+
+    #menu_top > ul > li > ul > li {
+        float: right;
+        padding-top: 10px;
+        padding-left: 5px;
+
+    }
+
+    #menu_top > ul > li > ul {
+        width: 1200px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        padding: 0;
+        background-color: white;
+        box-shadow: 0 2px 3px #aaaaaa;
+        display: none;
+        z-index: 1;
+    }
+
+    .menu_down_icon {
+        width: 11px;
+        height: 7px;
+        display: block;
+        float: left;
+        background: rgba(0, 0, 0, 0) url(icon/arrowdown.png) no-repeat scroll 0 0;
+        margin-top: -19px;
+        margin-left: 16px;
+    }
+
+    .top_menu3_col {
+        width: 299px;
+        height: 100%;
+        float: right;
+        border-left: 1px solid #cccccc;
+    }
+
+    .top_menu3_col_ul li {
+        padding-right: 15px;
+
+    }
+
+    .top_menu3_col_ul li:first-child {
+        padding-right: 8px;
+        color: #79c9c8;
+    }
+
+    .submenu3_hide {
+        display: none;
+    }
+
+    .active-menu {
+        background: #ffffff;
+        box-shadow: 0 -1px 3px #eeeeee;
+    }
+
+    .active-menu > a {
+        color: #c95324;
+    }
+
+    #menu_top a {
+        cursor: pointer;
+    }
+
+    #main {
+        width: 1200px;
+        background: #f7f3fa;
+        float: right;
+        margin-right: 75px;
+        padding: 6px;
+    }
+
+    /*FOOTER CSS DESIGN==============================================================*/
+    footer {
+        height: 300px;
+        width: 100%;
+        display: block;
+        float: right;
+        margin-top: 8px;
+    }
+
+    #footer-top {
+        height: 45px;
+        background: #5d6164;
+    }
+
+    #footer-buttom {
+        height: 255px;
+        background: #ebf9f8;
+    }
+
+    footer .main {
+        width: 1200px;
+        height: 100%;
+        margin: auto;
+    }
+
+    #footer-top span {
+        color: #ffffff;
+        font-family: Yekan;
+        font-size: 19px;
+    }
+
+    #footer-top ul {
+        float: left;
+        padding: 0;
+        height: 100%;
+    }
+
+    #footer-top ul li {
+        float: right;
+        height: 100%;
+    }
+
+    #footer-top ul li a {
+        color: #ffffff;
+        line-height: 40px;
+        padding-right: 30px;
+        margin-top: -8px;
+    }
+
+    #footer-top i {
+        width: 24px;
+        height: 24px;
+        display: block;
+        padding-right: 6px;
+        margin-top: 6px;
+        float: left;
+    }
+
+    #footer-buttom .right {
+        width: 275px;
+        height: 100%;
+
+        float: right;
+
+    }
+
+    #footer-buttom .center {
+        width: 275px;
+        height: 100%;
+
+        float: right;
+
+    }
+
+    #footer-buttom .left {
+        width: 650px;
+        height: 100%;
+        margin-top: 8px;
+        float: right;
+
+    }
+
+    #footer-buttom ul li {
+        font-family: Yekan;
+        font-size: 12.5pt;
+        line-height: 52px;
+        margin-right: 9px;
+
+    }
+
+    #footer-buttom .title {
+        font-size: 23px;
+        font-family: yekan;
+    }
+
+    #footer-buttom .email {
+        margin-top: 17px;
+    }
+
+    #footer-buttom .email input {
+        width: 430px;
+        height: 35px;
+        font-family: Yekan;
+        font-size: 15px;
+        border: 2px solid #cccccc;
+        border-radius: 3px;
+        padding-right: 5px;
+    }
+
+    #footer-buttom .email .btn {
+        width: 110px;
+        height: 36px;
+        display: block;
+        float: left;
+        background: #208ed6;
+        border: 2px solid #cccccc;
+        border-radius: 5px;
+        margin-left: 79px;
+        margin-top: 2px;
+        font-family: yekan;
+        font-size: 15px;
+        color: white;
+        text-align: center;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+        line-height: 35px;
+    }
+
+    #footer-buttom .left .social {
+        float: left;
+        padding-top: 40px;
+        margin-left: -124px;
+    }
+
+    #footer-buttom .left .social img {
+        padding: 12px;
+    }
+
+    #footer-buttom .left .apps {
+        float: left;
+        width: 100%;
+        margin-left: 74px;
+        margin-top: 8px;
+    }
+
+    #footer-buttom .left .apps img {
+        width: 150px;
+        height: 50px;
+        float: left;
+    }
+
+</style>
+
+<!--Header==========================================================-->
+<header style="background-color: white;">
+    <div style=" width:1200px; height: 100px; margin: 0 auto; padding-top: 15px; ">
+        <div id="header_right">
+            <div id="header_right_top" style="height: 40px;">
+                <span class="lock_icon"></span>
+                <a class="yekan fontmd" href="https://digikala.com" style="float: right; margin-right: 10px;">فروشگاه
+                    اینترنتی
+                    دیجی کالا،
+                    وارد شوید</a>
+                <span class="user_icon"></span>
+                <a class="yekan fontmd" href="https://google.com" style="float:right; margin-right: 10px;"> ثبت نام
+                    کنید</a>
+            </div>
+            <div id="header_right_bottom" style="height: 50px">
+                <div id="basket_top" style="width:190px; height:40px;float: right;">
+                    <div id="basket_top_right"></div>
+                    <div id="basket_top_left">
+                        <span class="yekan" style="color: white;">سبد خرید</span>
+                        <span class="basket_num">0</span>
+                    </div>
+                </div>
+                <div id="search_top">
+                    <input class="yekan fontmd search_input" type="text"
+                           placeholder="محصول،دسته یا برند مورد نظر را جستجو کنید...">
+                    <span></span>
+
+                </div>
+            </div>
+        </div>
+        <div id="header-left" style="float: left;">
+            <img src="Images/Logo%20Digikala.png ">
+        </div>
+
+    </div>
+</header>
+<!--Menu 1 and 2 and 3==============================================-->
+<nav id="nav">
+    <div id="menu_top" style="width: 1200px;height:40px;margin:auto;">
+        <uL>
+            <li data-time="1">
+                <a class="yekan fontmd">کالای دیجیتال</a>
+                <span class="menu_down_icon"></span>
+                <ul>
+                    <li data-time="11">
+                        <a class="yekan fontsm">موبایل</a>
+                        <div class="submenu3_hide">
+                            <div class="top_menu3_col">
+                                <ul class="yekan fontsm top_menu3_col_ul">
+                                    <li>گوشی موبایل</li>
+                                    <li>Apple</li>
+                                    <li>Samsung</li>
+                                    <li>LG</li>
+                                    <li>HTC</li>
+                                    <li>Huawei</li>
+                                    <li>Nokia</li>
+                                </ul>
+                            </div>
+                            <div class="top_menu3_col">
+                                <ul class="yekan fontsm top_menu3_col_ul">
+                                    <li>لوازم جانبی گوشی</li>
+                                    <li>کیف و کاور گوشی</li>
+                                    <li>پاور بانک (شارژر همراه)</li>
+                                    <li> پایه نگهدارنده گوشی</li>
+                                </ul>
+                            </div>
+                            <div class="top_menu3_col">
+                                <ul class="yekan fontsm top_menu3_col_ul">
+                                    <li>دوربین</li>
+                                    <li>دوربین عکاسی دیجیتال</li>
+                                    <li>دوربین‌ ورزشی و فیلم برداری</li>
+                                    <li>دوربین‌ چاپ سریع</li>
+                                </ul>
+                            </div>
+                            <div class="top_menu3_col">
+                                <ul class="yekan fontsm top_menu3_col_ul">
+                                    <li> کامپیوتر و تجهیزات جانبی</li>
+                                    <li> تجهیزات مخصوص بازی</li>
+                                    <li>مانیتور</li>
+                                    <li>کیس‌های اسمبل شده</li>
+                                    <li>قطعات داخلی کامپیوتر</li>
+                                    <li> و ماوس
+                                        کیبورد
+                                    </li>
+                                </ul>
+                                <img src="Images/Mobile2.png" style="position: absolute; left:10px; bottom:2px;">
+                            </div>
+                        </div>
+
+                    </li>
+                    <li data-time="12">
+                        <a class="yekan fontsm">تبلت و کتابخوان</a>
+                    </li>
+                    <li data-time="13">
+                        <a class="yekan fontsm">لپ تاپ</a>
+                    </li>
+                    <li data-time="14">
+                        <a class="yekan fontsm">دوربین</a>
+                    </li>
+                    <li data-time="15">
+                        <a class="yekan fontsm">کامپیوتر و تجهیزات جانبی</a>
+                    </li>
+                    <li data-time="16">
+                        <a class="yekan fontsm">ماشین های اداری</a>
+                    </li>
+                    <li data-time="17">
+                        <a class="yekan fontsm">صوتی و تصویری</a>
+                    </li>
+                    <li data-time="18">
+                        <a class="yekan fontsm">لوازم جانبی کالای دیجیتال</a>
+                    </li>
+                </ul>
+            </li>
+            <li data-time="2">
+                <a class="yekan fontmd">لوازم خانگی </a>
+                <span class="menu_down_icon"></span>
+                <ul>
+                    <li data-time="21">
+                        <a class="yekan fontsm">صوتی و تصویری</a>
+                        <div class="submenu3_hide">
+                            <div class="top_menu3_col">
+                                <ul class="yekan fontsm top_menu3_col_ul">
+                                    <li> تلویزیون</li>
+                                    <li>LG</li>
+                                    <li>Samsung</li>
+                                    <li>Sony</li>
+                                    <li>Hivision</li>
+                                    <li>Bosch</li>
+                                    <li>صنام</li>
+                                </ul>
+                            </div>
+
+                            <div class="top_menu3_col">
+                                <ul class="yekan fontsm top_menu3_col_ul">
+                                    <li>سینمای خانگی و ساندبار</li>
+                                    <li> ال جی</li>
+                                    <li> سونی</li>
+                                    <li>جی بی ال</li>
+                                    <li>مکسیدر</li>
+                                </ul>
+                            </div>
+                            <div class="top_menu3_col">
+                                <ul class="yekan fontsm top_menu3_col_ul">
+                                    <li>گیرنده دیجیتال تلویزیون</li>
+                                    <li>گیرنده صوتی تصویری</li>
+                                    <li>گیرنده دیجیتال USB</li>
+                                    <li>گیرنده دیجیتال DVB-T</li>
+                                </ul>
+                            </div>
+                            <div class="top_menu3_col">
+                                <ul class="yekan fontsm top_menu3_col_ul">
+                                    <li>کنسول بازی</li>
+                                    <li>کنسول خانگی</li>
+                                    <li>کنسول پرتابل</li>
+                                    <li>گیفت کارت</li>
+                                </ul>
+                                <img src="Images/TV.png" style="position: absolute; left:10px; bottom:2px;">
+                            </div>
+                        </div>
+                    </li>
+                    <li data-time="22">
+                        <a class="yekan fontsm">لوازم خانگی برقی</a>
+
+                    </li>
+                    <li data-time="23">
+                        <a class="yekan fontsm">آشپزخانه</a>
+                    </li>
+                    <li data-time="24">
+                        <a class="yekan fontsm">سرو و پذیرایی</a>
+                    </li>
+                    <li data-time="25">
+                        <a class="yekan fontsm">دکوراتیو</a>
+                    </li>
+                    <li data-time="26">
+                        <a class="yekan fontsm">فرش دستباف</a>
+                    </li>
+                    <li>
+                        <a class="yekan fontsm">خواب و حمام</a>
+                    </li>
+                    <li data-time="27">
+                        <a class="yekan fontsm">شستشو و نظافت</a>
+                    </li>
+                    <li data-time="28">
+                        <a class="yekan fontsm">ابزار</a>
+                    </li>
+                    <li data-time="29">
+                        <a class="yekan fontsm">نور و روشنایی</a>
+                    </li>
+                </ul>
+            </li>
+            <li data-time="3">
+                <a class="yekan fontmd">زیبایی و سلامت </a>
+                <span class="menu_down_icon"></span>
+            </li>
+            <li data-time="4">
+                <a class="yekan fontmd">فرهنگ و هنر </a>
+                <span class="menu_down_icon"></span>
+            </li>
+            <li data-time="5">
+                <a class="yekan fontmd">ورزش و سرگرمی </a>
+                <span class="menu_down_icon"></span>
+            </li>
+            <li data-time="6">
+                <a class="yekan fontmd">مادر و کودک </a>
+                <span class="menu_down_icon"></span>
+            </li>
+        </uL>
+    </div>
+</nav>
+
+<!--main part registration page=====================================-->
+<style>
+    .content {
+        width: 100%;
+        background: #FFFFFF;
+        float: right;
+        font-family: Yekan;
+    }
+
+    .order-step {
+        padding-top: 46px;
+        padding-right: 230px;
+        padding-left: 10px;
+        height: 100px;
+    }
+
+    .order-step .dashed {
+        float: right;
+
+    }
+
+    .order-step .dashed span {
+        width: 11px;
+        height: 3px;
+        background: #61d88b;
+        float: right;
+        display: block;
+        margin-right: 10px;
+    }
+
+    .order-step ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .order-step ul li {
+        position: relative;
+        display: block;
+        float: right;
+        width: 200px;
+        height: 10px;
+        right: -44px;
+        left: 44px;
+        margin-right: -40px;
+    }
+
+    .order-step ul li .circle {
+        width: 24px;
+        height: 24px;
+        display: block;
+        border: 2px solid #cccc;
+        border-radius: 50%;
+        position: absolute;
+        top: -13px;
+        right: 89px;
+
+    }
+
+    .order-step ul li.active .circle {
+        background: url("Icon/correctgreen.png") no-repeat;
+        border: none;
+    }
+
+    .order-step ul li .line {
+        width: 128px;
+        height: 3px;
+        display: block;
+        background: #cccc;
+        position: absolute;
+        top: 0;
+        right: 119px;
+
+    }
+
+    .order-step ul li.active .line {
+        background: #61d88b;
+    }
+
+    .order-step ul li .title {
+        font-family: Yekan;
+        font-size: 11.7pt;
+        color: #878181;
+        position: absolute;
+        top: 13px;
+        right: 79px;
+    }
+
+    .order-step ul li.active .title {
+        color: #61d88b;
+    }
+
+    h4 {
+
+        margin: 0;
+        margin-right: 10px;
+        font-weight: normal;
+        font-size: 14pt;
+
+    }
+
+    .frame {
+        width: 98%;
+        float: right;
+        background: white;
+        font-weight: normal;
+        font-family: Yekan;
+        font-size: 13pt;
+        padding: 8px;
+        text-align: right;
+        border: 1px solid #c3c5c6;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    h4 img {
+        position: relative;
+        top: 5px;
+        right: -4px;
+    }
+
+    .frame p {
+        display: inline;
+        margin: 0;
+        font-size: 11pt;
+        color: #5d6164;
+        margin-right: 10px;
+
+    }
+
+    .frame input {
+        display: inline;
+        width: 230px;
+        height: 35px;
+        margin-right: 20px;
+        position: absolute;
+        left: 185px;
+        top: 15px;
+
+    }
+
+    .frame .totalpay {
+        color: green;
+        float: left;
+        display: inline-block;
+    }
+
+    .btn_blue {
+
+        background-color: #208ed6;
+        border-radius: 6px;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: yekan;
+        font-size: 13pt;
+        padding: 6px;
+        text-decoration: none;
+        float: left;
+        position: absolute;
+        left: 12px;
+        top: 15px;
+        width: 145px;
+        text-align: center;
+    }
+
+    .btn_blue:active {
+        position: relative;
+        top: 1px;
+
+    }
+
+    table {
+        width: 99%;
+        float: right;
+        border-top: 1px solid #CFD3D6;
+        border-bottom: 1px solid #CFD3D6;
+        margin: 6px;
+    }
+
+    table tr {
+
+    }
+
+    table tr td {
+        height: 100px;
+        border-left: 1px solid #CFD3D6;
+
+    }
+
+    p {
+        margin: 0;
+        float: right;
+        margin-left: 20px;
+        margin-right: 10px;
+        font-size: 10.7pt;
+    }
+
+    table tr td:first-child {
+
+        border-right: 1px solid #CFD3D6;
+
+    }
+
+    .circle {
+        width: 18px;
+        height: 18px;
+        display: block;
+        border: 2px solid rgba(207, 211, 214, 0.8);
+        border-radius: 50%;
+        margin-right: 6px;
+        float: right;
+    }
+
+    table td.active .circle {
+        background: blue;
+        border: none;
+    }
+    .address {
+        width: 98%;
+        background: white;
+        font-weight: normal;
+        font-family: Yekan;
+        font-size: 13pt;
+        float: right;
+        padding: 8px;
+
+    }
+
+
+    .btn_silver {
+        box-shadow: inset 0px 1px 0px 0px #696969;
+        background-color: #747474;
+        border-radius: 6px;
+        border: 1px solid #747474;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: yekan;
+        font-size: 13pt;
+        padding: 6px;
+        text-decoration: none;
+        float: left;
+    }
+
+    .btn_silver:active {
+        position: relative;
+        top: 1px;
+
+    }
+</style>
+<div id="main">
+    <div class="content">
+        <div class="order-step">
+            <div class="dashed">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li class="active">
+                    <span class="circle"></span>
+                    <span class="line"></span>
+                    <span class="title">ورود به دیجی کالا</span>
+                </li>
+                <li class="active">
+                    <span class="circle"></span>
+                    <span class="line"></span>
+                    <span class="title">اطلاعات ارسال سفارش</span>
+                </li>
+                <li class="active">
+                    <span class="circle"></span>
+                    <span class="line"></span>
+                    <span class="title">بازبینی سفارش</span>
+                </li>
+                <li>
+                    <span class="circle"></span>
+                    <div class="dashed" style="float: left;">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="title">اطلاعات پرداخت</span>
+                </li>
+            </ul>
+        </div>
+        <h4>
+            <img src="Icon/salecolor.png">
+            کد تخفیف</h4>
+        <div class="frame">
+            <h4>کد تخفیف دیجی کالا دارم</h4>
+            <p>اگر مایل هستید از کد دیجی کالا استفاده کنید ، کافی است کد را وارد نمایید و دکمه ثبت را بزنید</p>
+            <input type="text">
+            <span class="btn_blue">ثبت کد تخفیف</span>
+        </div>
+        <h4>
+            <img src="Icon/giftcolor24.png">
+            کارت هدیه</h4>
+        <div class="frame">
+            <h4>
+                کارت هدیه دیجی کالا دارم
+            </h4>
+            <p>اگر مایل هستید از کارت هدیه دیجی کالا استفاده کنید ، کافی است کد را وارد نمایید و مبلغ هدیه از فاکتور
+                خرید شما کسر خواهد شد</p>
+            <input type="text">
+            <span class="btn_blue" style="background: green;">ثبت کارت هدیه</span>
+        </div>
+        <div class="frame" style="background:#688BFF21;">
+            <h4 style="display: inline;">
+                مبلغ قابل پرداخت
+            </h4>
+            <span class="totalpay">250000 تومان</span>
+        </div>
+        <h4>شیوه پرداخت</h4>
+        <table cellspacing="0">
+            <tr>
+                <td class="active" style="width: 40px"><span class="circle"></span></td>
+                <td>
+                    <h4>درگاه پرداخت اینترنتی</h4>
+                    <span class="circle"></span>
+                    <p>درگاه پرداخت بانک اینترنتی بانک سامان</p>
+                    <span class="circle"></span>
+                    <p>درگاه پرداخت بانک اینترنتی بانک پارسیان</p>
+                </td>
+                <td style="widows: 420px;text-align: center;"><img src="Images/Shopping2.jpg" width="380px"
+                                                                   height="130px;"></td>
+            </tr>
+
+        </table>
+        <table cellspacing="0">
+            <tr style="height: 100px;">
+                <td style="width: 40px"><span class="circle"></span></td>
+                <td>
+                    <h4>درگاه پرداخت اینترنتی</h4>
+                    <p>شما می توانید وجه سفارش خود را به صورت کارت به کارت نمایید و حداکثر تا 24 ساعت بعد اطلاعات خود را تکمیل نمایید</p>
+                </td>
+            </tr>
+
+        </table>
+        <table cellspacing="0">
+            <tr style="height: 100px;">
+                <td style="width: 40px"><span class="circle"></span></td>
+                <td>
+                    <h4>واریز به حساب</h4>
+                    <p>شما می توانید وجه سفارش خود را از طریق شعب بانکی واریز نمایید</p>
+                </td>
+            </tr>
+
+        </table>
+        <div class="address" style="margin-top: 60px;">
+            <a href="#" class="btn_silver" style="float: right;box-shadow: none;border: none;">بازگشت به سبد خرید</a>
+            <a href="#" class="btn_silver" style="background:green;box-shadow: none;border: none;">پرداخت و تکمیل خرید</a>
+        </div>
+
+    </div>
+</div>
+<!--Footer Design===================================================-->
+
+<footer>
+    <div id="footer-top">
+        <div class="main">
+<span>
+    7 روز هفته،24 ساعته پاسخگوی شما هستیم
+</span>
+            <ul>
+                <li>
+                    <a>
+                        02199999999
+                        <i style="background: url(Icon/phone-call.png) no-repeat;"></i>
+
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        سوالات متداول
+                        <i style="background: url(Icon/question2.png) no-repeat;"></i>
+
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        khatere.torki@gmail.com
+                        <i style="background: url(Icon/mail.png) no-repeat;"></i>
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="footer-buttom">
+        <div class="main">
+            <div class="right">
+                <ul>
+                    <li><a class="title">راهنمای خرید از دیجی کالا</a></li>
+                    <li><a>ثبت سفارش</a></li>
+                    <li><a>رویه های ارسال سفارش</a></li>
+                    <li><a>شیوه های پرداخت</a></li>
+                    <li><a>معرفی دیجی بن</a></li>
+
+                </ul>
+            </div>
+            <div class="center">
+                <ul>
+                    <li><a class="title">خدمات مشتریان</a></li>
+                    <li><a>پاسخ به پرسش های متداول</a></li>
+                    <li><a>رویه های مرجوع کالا</a></li>
+                    <li><a>شرایط استفاده</a></li>
+                    <li><a>حریم خصوصی</a></li>
+
+                </ul>
+            </div>
+            <div class="left">
+                <p class="title" style="padding: 0; margin: 0;">اولین نفری که مطلع می شود،باشید</p>
+                <div class="email">
+                    <input type="text" placeholder="آدرس ایمیل خود را وارد نمایید">
+                    <span class="btn">تایید ایمیل</span>
+                </div>
+                <div class="social">
+                    <img src="Icon/instagram-sketched.png">
+                    <img src="Icon/twitter.png">
+                    <img src="Icon/telegram.png">
+                    <img src="Icon/facebook.png">
+                </div>
+                <div class="apps">
+                    <img src="Icon/IOSIcon.png">
+                    <img src="Icon/googleplay.png">
+                    <img src="Icon/bazarIcon.png">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    var timer = {};
+
+    $('#menu_top li').hover(function () {
+
+        var tag = $(this);
+        var timeAttr = tag.attr('data-time');
+        clearTimeout(timer[timeAttr]);
+        timer[timeAttr] = setTimeout(function () {
+            $(' > ul', tag).fadeIn(0);
+            $(tag).addClass('active-menu');
+            $(' > .submenu3_hide', tag).fadeIn(0);
+        }, 500)
+
+    }, function () {
+        var tag = $(this);
+        var timeAttr = tag.attr('data-time');
+        clearTimeout(timer[timeAttr]);
+        timer[timeAttr] = setTimeout(function () {
+            $(' > ul', tag).fadeOut();
+            $(tag).removeClass('active-menu');
+            $(' > .submenu3_hide', tag).fadeOut();
+        }, 600);
+
+    })
+    $('.check_input').click(function () {
+        if ($(this).is(':checked')) {
+            $(this).parents('.check').find('.check_label').addClass('checked');
+        } else {
+            $(this).parents('.check').find('.check_label').removeClass('checked');
+        }
+    })
+</script>
+</body>
+</html>
